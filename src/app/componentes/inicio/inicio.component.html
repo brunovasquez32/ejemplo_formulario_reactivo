@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()">
+                <div class="mb-3">
+                  <label for="lableNombre" class="form-label">Ingrese Nombre</label>
+                  <input type="text" class="form-control" id="nombre" formControlName="nombre" aria-describedby="nombre">
+                  <div id="nombreHelp" class="form-text">Ingrese un nombre sin simbolo.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lableApellido" class="form-label">Ingrese Apellido</label>
+                    <input type="text" class="form-control" id="apellido" formControlName="apellido" aria-describedby="apellido">
+                    <div id="nombreHelp" class="form-text">Ingrese un apellido sin simbolo.</div>
+                  </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <p *ngIf="datos_formularios != null">Hola <b>{{datos_formularios.nombre}}  {{datos_formularios.apellido}}</b> Bienvenido al sistema en Angular</p>
+    </div>
+</div>
